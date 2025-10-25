@@ -1,14 +1,11 @@
 import React from 'react';
-import Spline from '@splinetool/react-spline';
 import { AlertTriangle, MapPin, Users, Lock } from 'lucide-react';
+import Background3D from './Background3D';
 
 export default function Hero() {
   return (
     <section className="relative isolate flex min-h-[86vh] w-full items-center overflow-hidden">
-      <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/mwBbOy4jrazr59EO/scene.splinecode" style={{ width: '100%', height: '100%' }} />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/50 via-neutral-950/80 to-neutral-950" />
-      </div>
+      <Background3D />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-20 md:px-6">
         <div className="max-w-3xl">
@@ -42,7 +39,7 @@ export default function Hero() {
 
 function Badge({ icon, label }) {
   return (
-    <div className="flex items-center gap-2 rounded-md border border-emerald-400/20 bg-neutral-900/60 px-3 py-2 text-sm text-white/90">
+    <div className="flex items-center gap-2 rounded-md border border-emerald-400/20 bg-neutral-900/60 px-3 py-2 text-sm text-white/90 backdrop-blur">
       <span className="text-emerald-300">{icon}</span>
       <span>{label}</span>
     </div>

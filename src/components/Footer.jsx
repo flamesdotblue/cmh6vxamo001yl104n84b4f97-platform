@@ -1,9 +1,11 @@
 import React from 'react';
+import Background3D from './Background3D';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-neutral-950">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 py-12 md:grid-cols-3 md:px-6">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-neutral-950">
+      <Background3D overlayFrom="from-neutral-950/60" overlayVia="via-neutral-950/80" overlayTo="to-neutral-950" />
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 py-12 md:grid-cols-3 md:px-6">
         <div>
           <div className="text-lg font-semibold">VANGUARD</div>
           <p className="mt-2 max-w-sm text-sm text-white/70">Discreet, reliable safety for India. Focused on women’s safety, built for everyone. Designed to scale across cities and states.</p>
@@ -14,7 +16,7 @@ export default function Footer() {
             <ul className="space-y-2 text-white/70">
               <li><a href="#features" className="hover:text-white">Features</a></li>
               <li><a href="#pricing" className="hover:text-white">Pricing</a></li>
-              <li><a href="#download" className="hover:text-white">Get the App</a></li>
+              <li><a href="#pre-register" className="hover:text-white">Pre-register</a></li>
             </ul>
           </div>
           <div>
@@ -43,7 +45,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-white/10">
+      <div className="relative z-10 border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 text-xs text-white/60 md:flex-row md:px-6">
           <p>© {new Date().getFullYear()} VANGUARD Technologies Pvt. Ltd. Made with care in India.</p>
           <div className="flex items-center gap-4">

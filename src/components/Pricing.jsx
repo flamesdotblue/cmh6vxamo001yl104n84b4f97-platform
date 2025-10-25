@@ -1,14 +1,17 @@
 import React from 'react';
+import Background3D from './Background3D';
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="relative mx-auto w-full max-w-7xl px-4 py-16 md:px-6 md:py-24">
-      <div className="mx-auto max-w-3xl text-center">
+    <section id="pricing" className="relative mx-auto w-full max-w-7xl overflow-hidden px-4 py-16 md:px-6 md:py-24">
+      <Background3D overlayFrom="from-neutral-950/20" overlayVia="via-neutral-950/70" overlayTo="to-neutral-950" />
+
+      <div className="relative z-10 mx-auto max-w-3xl text-center">
         <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Simple, transparent pricing</h2>
         <p className="mt-3 text-white/70">Start free. Upgrade for AI detection, verified helpers, extended history, and more.</p>
       </div>
 
-      <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div className="relative z-10 mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
         <Plan
           name="Freemium"
           price="Free"
@@ -38,7 +41,7 @@ export default function Pricing() {
         />
       </div>
 
-      <p className="mx-auto mt-8 max-w-3xl text-center text-xs text-white/60">
+      <p className="relative z-10 mx-auto mt-8 max-w-3xl text-center text-xs text-white/60">
         Privacy-first: All evidence and location data auto-delete after 24 hours unless securely preserved for an ongoing investigation with your consent or lawful request. End-to-end encryption protects data in transit.
       </p>
     </section>
@@ -47,7 +50,7 @@ export default function Pricing() {
 
 function Plan({ name, price, features, cta, highlight }) {
   return (
-    <div className={`relative rounded-2xl border p-6 ${
+    <div className={`relative rounded-2xl border p-6 backdrop-blur ${
       highlight
         ? 'border-emerald-400/40 bg-gradient-to-br from-emerald-500/10 via-neutral-900/60 to-transparent'
         : 'border-white/10 bg-neutral-900/40'
